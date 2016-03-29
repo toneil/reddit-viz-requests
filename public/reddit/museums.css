@@ -1,0 +1,70 @@
+body {
+    font: 11px sans-serif;
+
+    background: gainsboro;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dot {
+    stroke-opacity: 0;
+    fill-opacity: 1;
+}
+
+.legend-text {
+    text-align: left;
+    font-size: 4em;
+}
+
+.explain {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
+.field {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 700px;
+}
+
+.field p {
+    font-size: 1.5em;
+
+}
+
+.field h1 {
+    font-size: 2.2em;
+}
+
+.label {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+
+.guideline{
+    stroke-opacity: 0.2;
+}
+.tooltip {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: 400;
+    color: black;
+    background: darkgray;
+    display: block;
+    pointer-events: none;
+}

@@ -1,0 +1,35 @@
+body {
+    font: 11px sans-serif;
+    text-align: left;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dot {
+    stroke-opacity: 0;
+    fill-opacity: 0.5;
+}
+
+.legend-text {
+    text-align: left;
+    font-size: 4em;
+}
+
+.tooltip {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 50px;
+    font-size: 2em;
+    font-weight: 400;
+    color: black;
+    background: darkgray;
+    display: block;
+    pointer-events: none;
+}
