@@ -6,7 +6,7 @@
 <!-- Tooltip example from http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html -->
 <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto:500,400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="museums.css" type="text/css">
+    <link rel="stylesheet" href="reddit.css" type="text/css">
     <script src="http://d3js.org/d3.v3.min.js"></script>
 
 </head>
@@ -19,9 +19,57 @@
         <h1>Participation in /r/The_Donald and /r/SandersForPresident</h1>
         <p>
             The graph below shows what subreddits the 500 most recent participators on /r/The_Donald and /r/SandersForPresident comment on.
-            The users were polled on the 7th of April 2016, with
+            For each of these users we looked at their 50 most recent comments, and considered that user as a participant of the subrredits those comments were posted to.
         </p>
-        <p> Subreddits with fewer than 10 participants have been filtered out.</p>
+        <p>
+            For example, a user found among the 500 latest participants of /r/SandersForPresident might also have commented on /r/hillaryclinton, in which case we add a "Sanders tick" to that subreddit.
+        </p>
+        <p>
+            Note that since there's some overlap between the two boards, it's possible that the total number of users polled is somewhat lower than 1000.
+        </p>
+        <p> To reduce noise, subreddits with fewer than 10 participants (roughly 1% of the sample size) have been filtered out.
+            The users were polled on the 7th of April 2016
+        </p>
+
+    </div>
+    <div class="field">
+        <h2>Interesting data points</h2>
+        <p>
+            No claims are made that those users polled from the two main boards sympathise for those candidates: Indeed, the overlap between these two boards have already been noted.
+        </p>
+        <p>
+            Yet, the over- and under-representation by users polled from /r/SandersForPresident reaffirms my own preconceived ideas of Sanders supporters, and vice versa with /r/TheDonald and Trump supporters.
+            Other outstanding data points are less obvious to relate to interest in or sympathy to the candidates: /r/TheDonald users seem to prefer playing the game Overwatch, while Rocket League is more popular with the /r/SandersForPresident crowd.
+            It should be mentioned that I am myself fiercely anti-Trump, but have no strong views on Bernie Sanders.
+        </p>
+    </div>
+    <div class="field">
+        <h2>/r/TheDonald</h2>
+        <p>
+            Six subreddits stand out in particularly interesting:
+        </p>
+        <p>
+            <em>/r/KotakuInAction</em> and <em>/r/TumblrInAction</em> both mock the political correctness typical of Kotaku (a gaming news site known for running socially progressive stories from the realm of video games)
+            and Tumblr. /r/KotakuInAction is still discussing the infamous <em>GamerGate</em> debacle and animosity towards the game critic Sarkeesian is ever-present.
+        </p>
+        <p>
+            The over-representation of participation in <em>/r/european</em> and <em>/r/europe</em> struck me as odd at first
+            - is there perhaps a greater interest for Berlin nightclubs or Flanders war memorials in the /r/TheDonald demography.
+            I then browsed these subreddits and discovered that they were flooded with discussions on Europe's refugee crisis, islamophobia rampant.
+        </p>
+        <p>
+            A third interesting couple is <em>/r/theRedPill</em> and <em>/r/mensrights</em>, both being explicitly anti-feminist.
+        </p>
+        <h2>/r/SandersForPresident</h2>
+        <p>
+            The Sanders community is more heterogeneous in its subreddit participation spread.
+            Excluding trivial correlations such as <em>/r/hillaryclinton</em> and <em>/r/WashingtonForSanders</em>, few politically charged subreddits appear as over-represented by participators of /r/SandersForPresident.
+            The notable exception is <em>/r/GrassrootsSelect</em>, a subreddit that aims <em>"to reengage the 99% in the political process at all levels of government through strong grassroots action"</em>
+        </p>
+        <p>
+            <em>/r/atheism</em>, <em>/r/science</em> and <em>/r/Drugs</em> are also more prevalent with the Sanders crowd,
+            painting an image of the typical /r/SandersForPresident commenter being a college kid.
+        </p>
     </div>
     <div id="list" class="field"></div>
 </div>

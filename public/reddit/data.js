@@ -23,6 +23,9 @@ var tooltip = d3.select("body").append("div")
     .attr('width', 400)
     .style("opacity", 0);
 
+function openInTab(url) {
+    var win = window.open(url, '_blank');
+}
 
 d3.csv("data.csv", function (error, data) {
 
@@ -112,7 +115,7 @@ d3.csv("data.csv", function (error, data) {
         })
         .style("text-anchor", "middle")
         .on("mousedown", function (d) {
-            console.log(d);
+            openInTab('http://www.reddit.com/r/'+ d.subreddit);
         })
         .on("mouseover", function (d) {
             var total = d.sanders + d.trump;
