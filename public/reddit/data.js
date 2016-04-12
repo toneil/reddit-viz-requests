@@ -3,8 +3,8 @@ var margin = {top: 20, right: 120, bottom: 20, left: 120},
     height = 600 - margin.top - margin.bottom;
 
 var xValue = function (d) {
-    var s = parseInt(d.sanders);
-    var t = parseInt(d.trump);
+    var s = d.sanders;
+    var t = d.trump;
     var x = (s - t) / (s + t);
     return x;
 };
@@ -13,31 +13,10 @@ var xScale = d3.scale.linear().range([0, width]); // value -> display
 
 var xMap = function (d) {
         return xScale(xValue(d));
-    } // data -> display
+    };
 
 
-var yValue = function (d) {
-        if (d.trump == 0)
-            return 0.1;
-        return d.trump;
-    }, // data -> value
-    yScale = d3.scale.linear().range([height, 1]), // value -> display
-    yMap = function (d) {
-        return yScale(yValue(d));
-    } // data -> display
-
-
-var cValue = function (d) {
-        if (d.trump < d.sanders)
-            return 1;
-        if (d.trump > d.sanders)
-            return -1;
-        return 0;
-    },
-    color = d3.scale.category10();
-
-
-
+var yScale = d3.scale.linear().range([height, 1]);
 
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -47,12 +26,17 @@ var tooltip = d3.select("body").append("div")
 
 d3.csv("data.csv", function (error, data) {
 
+
+    data = data.map(function (d) {
+        return {subreddit: d.subreddit, trump: parseInt(d.trump), sanders: parseInt(d.sanders)};
+    }).filter(function (d) {
+        return d.trump + d.sanders >= 10;
+    });
+
+
     data.sort(function (b,a) {
         return (a.trump + a.sanders) - (b.trump + b.sanders);
     });
-    var maxval = data.reduce(function(acc, d) {
-        return Math.max(acc, d.trump, d.sanders);
-    }, 0);
 
     xScale.domain([-1, 1]);
     yScale.domain([0, data.length * 20]);
@@ -131,7 +115,7 @@ d3.csv("data.csv", function (error, data) {
             console.log(d);
         })
         .on("mouseover", function (d) {
-            var total = parseInt(d.sanders) + parseInt(d.trump);
+            var total = d.sanders + d.trump;
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
